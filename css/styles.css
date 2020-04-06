@@ -1,5 +1,6 @@
 h1 {
     color: green;
+    font-size: 15pt;
   }
 
 .special {
@@ -7,5 +8,6 @@ h1 {
 }
 
 .ScoreButton {
-    background-color: rgb(222, 220, 245)
+    background-color: pink;
+    font-size: 18pt;
 }

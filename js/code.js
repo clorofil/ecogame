@@ -4,7 +4,7 @@ var drake = dragula([$('#list1')]);
 function score() {
     items = $('#list1').getElementsByTagName("div")
     var i;
-    correct = true
+    errors = 0
     count = 1
     for (i = 0; i < items.length; i++) {
         // only look at div items starting with 'i'
@@ -14,13 +14,22 @@ function score() {
 
             if (count!=j) {
                 console.log(i,j)
-                correct = false
+                errors = errors + 1
+                console.log(items[i])
+                console.log(items[i].style)
+                items[i].style.background = "red"
+                }
+            else {
+                items[i].style.background = "beige"
             }
             count = count + 1
         }
     }
-    console.log(correct)
-    $('#answer').textContent = correct
+    if (errors==0) {
+        $('#answer').textContent = "Perfect"  
+    } else {
+        $('#answer').textContent = "There are " + errors + " mistakes"  
+    }
 }
 
 function $ (id) {
