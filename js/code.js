@@ -17,10 +17,10 @@ function score() {
                 errors = errors + 1
                 console.log(items[i])
                 console.log(items[i].style)
-                items[i].style.background = "red"
+                items[i].style.background = "darkorange"
                 }
             else {
-                items[i].style.background = "beige"
+                items[i].style.background = "inherit"
             }
             count = count + 1
         }
@@ -30,6 +30,10 @@ function score() {
     } else {
         $('#answer').textContent = "There are " + errors + " mistakes"  
     }
+}
+
+function showresults() {
+    $('#results').style.visibility = "visible" 
 }
 
 function $ (id) {
