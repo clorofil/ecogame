@@ -1,25 +1,65 @@
 .column {
     float: left;
-    width: 50%;
-  }
+}
+
+.left, .right {
+    width: 280px;
+}
+  
+.middle {
+   width: 60px;
+}
+
+.buttons {
+    padding: 20px 0;
+    width: 620px;
+    height: 50px;
+    clear: both;
+    text-align: center;
+}
 
 img {
-    width: 300px;
-    height: 75px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.item {
-    /*background-color: beige;*/
-    position: relative;
+/* grabbing cursor*/
+.grabbable img{
+    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
 }
+
+/*keep grabbing icon while moving box */
+.gu-mirror {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+  }
+
+.triangle-down {
+	width: 0;
+	height: 0;
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
+}
+
+.ghg {
+    border-top: 525px solid #EA9D7E;
+}
+.water {
+    border-top: 450px solid #EA9D7E;
+}
+
 
 .ScoreButton {
     font-size: 15pt;
     font-family: "Verdana", Geneva, sans-serif;
     color: #2F7800;
-    
     transition: all 0.2s ease;
     border-radius: 50px;
     border: 1px solid #2F7800;
-    /*background: rgba(255, 255, 255, 0);*/
+    background: transparent
 }

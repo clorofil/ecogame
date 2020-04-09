@@ -1,5 +1,7 @@
-var drake = dragula([$('#list1')]);
-
+dragula([$('#list1')])
+.on('drop', function (el) {
+    clearall(); //clear all color in case it was scored before
+});
 
 function score() {
     items = $('#list1').getElementsByTagName("div")
@@ -10,28 +12,41 @@ function score() {
         // only look at div items starting with 'i'
         if (items[i].id.slice(0,1) == "i") {
             j = items[i].id.slice(1)
-            console.log(items[i].id)
-
             if (count!=j) {
-                console.log(i,j)
                 errors = errors + 1
-                console.log(items[i])
-                console.log(items[i].style)
-                items[i].style.background = "darkorange"
+                items[i].getElementsByTagName("img")[0].style.background = "#F4BEA9"
                 }
             else {
-                items[i].style.background = "inherit"
+                items[i].getElementsByTagName("img")[0].style.background = "#D5E4AC"
             }
             count = count + 1
         }
     }
     if (errors==0) {
-    } else {
-    }
+        // show the results
+        showresults()
+    } 
+}
+
+function clearall(){
+    items = $('#list1').getElementsByTagName("div")
+    var i;
+    for (i = 0; i < items.length; i++) {
+        // only look at div items starting with 'i'
+        if (items[i].id.slice(0,1) == "i") {
+            items[i].getElementsByTagName("img")[0].style.background = "inherit"
+        }
+    }   
 }
 
 function showresults() {
-    $('#results').style.visibility = "visible" 
+    if ($('#scorebutton').textContent == "Show Result") {
+        $('#results').style.visibility = "visible" 
+        $('#scorebutton').textContent = "Hide Result"
+    } else {
+        $('#results').style.visibility = "hidden" 
+        $('#scorebutton').textContent = "Show Result"
+    }
 }
 
 function $ (id) {
