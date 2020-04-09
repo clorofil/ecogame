@@ -26,9 +26,7 @@ function score() {
         }
     }
     if (errors==0) {
-        $('#answer').textContent = "Perfect"  
     } else {
-        $('#answer').textContent = "There are " + errors + " mistakes"  
     }
 }
 
