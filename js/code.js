@@ -5,33 +5,32 @@ dragula([$('#list1')])
 
 function score() {
     items = $('#list1').getElementsByTagName("div")
-    var i;
-    errors = 0
-    count = 1
-    for (i = 0; i < items.length; i++) {
+    var errors = 0
+    for (var i = 0; i < items.length; i++) {
         // only look at div items starting with 'i'
         if (items[i].id.slice(0,1) == "i") {
-            j = items[i].id.slice(1)
-            if (count!=j) {
+            j = items[i].id.slice(1) //get if 'i3' return 3
+            if (i!=j) {
                 errors = errors + 1
+                // color red
                 items[i].getElementsByTagName("img")[0].style.background = "#F4BEA9"
-                }
+            }
             else {
+                // color green
                 items[i].getElementsByTagName("img")[0].style.background = "#D5E4AC"
             }
-            count = count + 1
         }
     }
     if (errors==0) {
-        // show the results
+        // perfect answer, show the results
         showresults()
     } 
 }
 
+// Clear coloring for when we drag/drop after a scoring
 function clearall(){
     items = $('#list1').getElementsByTagName("div")
-    var i;
-    for (i = 0; i < items.length; i++) {
+    for (var i = 0; i < items.length; i++) {
         // only look at div items starting with 'i'
         if (items[i].id.slice(0,1) == "i") {
             items[i].getElementsByTagName("img")[0].style.background = "inherit"
@@ -40,6 +39,7 @@ function clearall(){
 }
 
 function showresults() {
+    // toggle results and button name
     if ($('#scorebutton').textContent == "Show Result") {
         $('#results').style.visibility = "visible" 
         $('#scorebutton').textContent = "Hide Result"
