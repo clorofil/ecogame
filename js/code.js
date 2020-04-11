@@ -3,6 +3,11 @@ dragula([$('#list1')])
     clearall(); //clear all color in case it was scored before
 });
 
+/*hack to try to fix the ios scolling bug */
+window.addEventListener('touchmove', (e) => {
+    return;
+    }, { passive: false });
+
 function score() {
     items = $('#list1').getElementsByTagName("div")
     var errors = 0
