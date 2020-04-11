@@ -1,14 +1,11 @@
-dragula([$('#list1')])
-.on('drop', function (el) {
-    clearall(); //clear all color in case it was scored before
-});
 
-/*hack to try to fix the ios scolling bug */
-function patchIosDragScroll() {
-    window.addEventListener('touchmove', e => e.preventDefault(), { passive: false });
+var sortable = Sortable.create(document.getElementById('list1'),{
+    animation:150,
+    ghostClass: "ghost",
+    onEnd: function (el) {
+        clearall(); //clear all color in case it was scored before
     }
-    
-    patchIosDragScroll();
+});
 
 function score() {
     items = $('#list1').getElementsByTagName("div")

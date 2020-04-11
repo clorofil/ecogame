@@ -59,3 +59,8 @@ img {
     border: 1px solid #2F7800;
     background: transparent
 }
+
+/*opacity during drag/drop */
+.ghost {
+    opacity: 0.3;
+  }
