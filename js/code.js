@@ -4,9 +4,11 @@ dragula([$('#list1')])
 });
 
 /*hack to try to fix the ios scolling bug */
-window.addEventListener('touchmove', (e) => {
-    return;
-    }, { passive: false });
+function patchIosDragScroll() {
+    window.addEventListener('touchmove', e => e.preventDefault(), { passive: false });
+    }
+    
+    patchIosDragScroll();
 
 function score() {
     items = $('#list1').getElementsByTagName("div")
