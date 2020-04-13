@@ -25,7 +25,7 @@ function score() {
             }
         }
     }
-    if (errors==0) {
+    if (errors==0 && $('#scorebutton').textContent == "Show Result"){
         // perfect answer, show the results
         showresults()
     } 
@@ -46,7 +46,7 @@ function showresults() {
     // toggle results and button name
     if ($('#scorebutton').textContent == "Show Result") {
         $('#results').style.visibility = "visible" 
-        $('#scorebutton').textContent = "Hide Result"
+        $('#scorebutton').textContent = "Hide Result"        
     } else {
         $('#results').style.visibility = "hidden" 
         $('#scorebutton').textContent = "Show Result"
